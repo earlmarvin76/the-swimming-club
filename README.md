@@ -270,6 +270,8 @@ This project uses the following resources and inspiration:
 - Font Awesome icons used for social icons and decorative UI elements
 - OpenStreetMap embedded map used in the footer
 - Basic static website structure and styling approach based on front-end web development learning principles
+- Some of the code was copied and pasted from resources like bootstrap, github copilot suggestions, which I used most of the time because it makes completing the project less time consuming.
+- I also copied some of the code from our last project called Love Running, like the bootstrap css in the head and the bootstrap js script at the bottom of body.
 
 All external resources were used for educational and project purposes. Where possible, project-specific branding should be updated later with the official club name, content and media assets.
 
