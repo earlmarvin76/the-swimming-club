@@ -262,6 +262,7 @@ To deploy this project as a static site:
 Alternatively, the project can be deployed on Netlify by uploading the project folder or connecting the repository.
 
 ## Credits and attribution
+- I copied this README file directly from my travel-agency project page, with slight change to fit this project
 
 This project uses the following resources and inspiration:
 
