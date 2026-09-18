@@ -344,6 +344,6 @@ http://localhost:8000
 ```
 
 ## Deployment
-The live deployed site can be accessed [here](https://earlmarvin76.github.io/the-swimming-club/)
+The live deployed site can be accessed (https://earlmarvin76.github.io/the-swimming-club/)
 ## Repository URL
-The Repository URL can be accessed [here](GitHub.com/earlmarvin76/the-swimming-club)
+The Repository URL can be accessed (Github.com/earlmarvin76/the-swimming-club)
