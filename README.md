@@ -246,7 +246,7 @@ The website is generally accessible for a static front-end project, but addition
 
 The project is currently set up as a static website and can be deployed to GitHub Pages, Netlify or another static hosting service.
 
-Live website URL: not yet published in this repository.
+Live website URL: https://earlmarvin76.github.io/the-swimming-club
 
 ### Deployment instructions
 
