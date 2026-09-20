@@ -16,19 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.getElementById('signup-form');
 
     if (signupForm) {
+        // Project-specific form flow using the browser Constraint Validation API and local confirmation page.
         signupForm.addEventListener('submit', (event) => {
-            const firstName = document.getElementById('first-name');
-            const lastName = document.getElementById('last-name');
-            const email = document.getElementById('email-address');
-
-            if (!firstName || !lastName || !email) {
+            if (!signupForm.checkValidity()) {
+                signupForm.reportValidity();
                 return;
             }
 
-            if (!firstName.value.trim() || !lastName.value.trim() || !email.value.trim()) {
-                event.preventDefault();
-                alert('Please complete all required details before signing up.');
-            }
+            event.preventDefault();
+            window.location.href = 'thank-you.html';
         });
     }
 });

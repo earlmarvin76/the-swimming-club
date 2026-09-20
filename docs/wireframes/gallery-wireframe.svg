@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Gallery page wireframe</title>
+  <desc id="desc">Low fidelity wireframe showing the Swimming Club gallery page structure.</desc>
+  <style>
+    text { font-family: Arial, sans-serif; fill: #263238; }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 16px; }
+    .line { stroke: #263238; stroke-width: 3; fill: none; }
+    .block { stroke: #263238; stroke-width: 3; fill: #eef2f3; }
+    .image { stroke: #263238; stroke-width: 3; fill: #cbd5d8; }
+  </style>
+  <rect width="1200" height="900" fill="#ffffff"/>
+  <text x="40" y="48" class="label">GALLERY PAGE WIREFRAME</text>
+  <rect x="40" y="75" width="1120" height="70" class="block"/>
+  <text x="65" y="118" class="label">LOGO</text><text x="830" y="118" class="small">HOME</text><text x="930" y="118" class="small">GALLERY</text><text x="1050" y="118" class="small">SIGN UP</text>
+  <text x="40" y="205" class="label">THE SWIMMING CLUB GALLERY</text>
+  <line x1="40" y1="225" x2="1160" y2="225"/>
+  <rect x="40" y="255" width="250" height="210" class="image"/><rect x="315" y="255" width="250" height="150" class="image"/><rect x="590" y="255" width="250" height="235" class="image"/><rect x="865" y="255" width="295" height="175" class="image"/>
+  <rect x="40" y="490" width="250" height="155" class="image"/><rect x="315" y="430" width="250" height="215" class="image"/><rect x="590" y="515" width="250" height="130" class="image"/><rect x="865" y="450" width="295" height="195" class="image"/>
+  <path d="M80 420 L145 300 L255 430 M355 360 L430 290 L525 385 M650 445 L735 300 L810 440" class="line"/>
+  <text x="510" y="710" class="small">RESPONSIVE IMAGE GRID / MASONRY FLOW</text>
+  <rect x="40" y="755" width="1120" height="75" class="block"/><text x="500" y="800" class="small">FOOTER / LINKS / MAP / SOCIALS</text>
+</svg>

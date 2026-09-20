@@ -19,24 +19,56 @@ The features of the site were designed around user needs. The following user sto
 
 - As a user, I want to understand the benefits of swimming so that I can see why joining the club is worthwhile.
   - This is addressed by the home page's reason section, which explains health, strength and social benefits.
+  - Finished page evidence: [home page screenshot](docs/lighthouse/home-desktop.png)
 
 - As a user, I want to see when the club meets so that I can plan my attendance.
   - This is addressed by the schedule information and meetup section on the home page.
+  - Finished page evidence: [home page screenshot](docs/lighthouse/home-desktop.png)
 
 - As a user, I want to view club activities visually so that I can get a sense of the atmosphere and membership experience.
   - This is addressed by the gallery page, which showcases images of swimmers and club sessions.
+  - Finished page evidence: [gallery page screenshot](docs/lighthouse/gallery-desktop.png)
 
 - As a user, I want to sign up easily so that I can join the club quickly.
   - This is addressed by the sign-up form, which collects key member details and validates important fields.
+  - The sign-up page is available at [signup.html](signup.html); its wireframe is shown in the [design-process evidence](docs/wireframes/signup-wireframe.svg).
 
 - As a user, I want to navigate the site on mobile devices so that I can access information while on the go.
   - This is addressed by the responsive layout and mobile navigation menu.
+
+### Finished website screenshots
+
+These captures show the finished desktop implementation used as evidence for the user stories above.
+
+![Finished home page](docs/lighthouse/home-desktop.png)
+
+![Finished gallery page](docs/lighthouse/gallery-desktop.png)
 
 ## UX design
 
 ### Wireframes
 
-The project was planned around a simple three-page structure using a consistent brand identity and clear hierarchy. A rough wireframe concept is shown below.
+The project was planned around a simple three-page structure using a consistent brand identity and clear hierarchy. These low-fidelity wireframes show the intended information architecture before visual styling and imagery were added.
+
+#### Home page
+
+![Home page wireframe](docs/wireframes/home-wireframe.svg)
+
+The home page wireframe prioritises the club identity, the reasons to join, and the weekly meetup schedule.
+
+#### Gallery page
+
+![Gallery page wireframe](docs/wireframes/gallery-wireframe.svg)
+
+The gallery wireframe reserves the main content area for a responsive image grid, with the shared navigation and footer kept consistent.
+
+#### Sign-up page
+
+![Sign-up page wireframe](docs/wireframes/signup-wireframe.svg)
+
+The sign-up wireframe keeps the form central and groups the required member details and swimming preference controls into one clear flow.
+
+The final visual implementation can be compared with the captured desktop screens in [docs/lighthouse](docs/lighthouse).
 
 ```text
 HOME PAGE
@@ -125,14 +157,14 @@ The design aims to feel welcoming and active rather than corporate. The combinat
 - Gallery page with swimming-related imagery
 - Sign-up form with required field validation
 - Footer with social links, site navigation and embedded map
-- JavaScript for mobile menu state and form validation
+- JavaScript for mobile menu state, form validation and on-site confirmation routing
 
 ### How the features work
 
 - The navigation menu collapses into a mobile-friendly toggle on smaller screens
 - The hero section uses a background image and overlay to make the club branding stand out
 - The gallery is displayed using CSS column layout for a modern, responsive image grid
-- The sign-up form checks required fields before submission and prevents empty form data being sent
+- The sign-up form checks required fields before submission and redirects valid entries to the on-site `thank-you.html` confirmation page
 - The footer includes contact-friendly information, navigation and social icons for additional engagement
 
 ### Features for future implementation
@@ -155,11 +187,25 @@ Manual testing was completed locally by previewing the site in a browser and che
 | Navigation | Clicked Home, Gallery and Sign Up links | Each page loads correctly | Links worked as expected | Pass |
 | Internal links | Verified links between pages | No broken internal navigation | Internal pages connected correctly | Pass |
 | External links | Checked social media and map links | Links open correctly in a new tab or relevant destination | Social links were present and configured as external links | Pass |
-| Sign-up form | Submitted empty form | Validation alert should appear | Required-field validation triggered as intended | Pass |
-| Form fields | Entered valid information | Form should accept values and submit | Field inputs behaved correctly in the static demo form | Pass |
+| Sign-up form | Submitted empty form | Browser validation should keep the user on the form | Required-field validation kept the user on `signup.html` | Pass |
+| Form fields | Entered valid information | Form should accept values and show an on-site confirmation | Valid entries redirected to `thank-you.html` | Pass |
 | Buttons | Checked join button and nav actions | Buttons respond and maintain visual styling | Buttons rendered and functioned appropriately | Pass |
 | Responsiveness | Resized browser to mobile and tablet widths | Layout changes without overlap or clipping | Layout adjusted responsively | Pass |
 | Content layout | Reviewed each section on the page | Sections remain readable and aligned | Layout matched the intended structure | Pass |
+
+### Bugs found during testing and fixes made
+
+During the quality review, a few small issues were flagged and corrected:
+
+- The mobile navigation menu originally retained the active state when a user clicked a link, which could leave the menu visually active after navigation. This was fixed by clearing the active class and closing the mobile toggle when a navigation link was selected.
+- The sign-up form needed a clearer submission flow so that valid entries redirected to the confirmation page without leaving the user with a non-responsive submit attempt. This was fixed by checking form validity before submission and then sending the user to `thank-you.html` via JavaScript.
+- A few layout and spacing issues were reviewed at narrow widths to ensure text blocks and buttons remained readable and did not overlap on small screens. These were adjusted by refining responsive spacing and layout rules.
+
+### Remaining issues
+
+- The form currently uses browser validation and a front-end redirect only; it does not store data in a backend or send it to a real database or email service.
+- The CSS validator reported a small number of compatibility warnings related to `break-inside` in screen media, but these do not prevent the page from working correctly.
+- No functional issues remain in the current build, but the site is still a static front-end project rather than a full booking or membership system.
 
 ## Responsiveness testing
 
@@ -209,6 +255,10 @@ Evidence status:
 
 The screenshot records the result for the deployed stylesheet.
 
+### Validation evidence method
+
+The deployed URLs were entered into the official W3C validator services. The completed result pages were captured as screenshots and saved in `docs/validation/`, then embedded above as evidence. This records both the service used and the exact version of the deployed files that were tested.
+
 ## Accessibility testing
 
 Accessibility checks were considered as part of the design and implementation process.
@@ -234,9 +284,12 @@ The website is generally accessible for a static front-end project, but addition
    - Fix: JavaScript was used to remove the active state and collapse the nav toggle after a navigation click.
 
 2. Empty form submission risk existed on the sign-up page.
-   - Fix: JavaScript validation was added to check required fields before submission.
+  - Fix: JavaScript validation was added to check required fields before routing valid submissions to the on-site confirmation page.
 
-3. Responsive design had to be carefully managed for narrower screens.
+3. Form submissions previously sent users to an external demonstration endpoint.
+  - Fix: the form now remains within the website and redirects valid entries to `thank-you.html`.
+
+4. Responsive design had to be carefully managed for narrower screens.
    - Fix: media queries were used to adjust layout, spacing and image sizing.
 
 ### Remaining issues
@@ -279,20 +332,23 @@ Alternatively, the project can be deployed on Netlify by uploading the project f
 ### External runtime resources
 
 - [Google Fonts](https://fonts.google.com/) supplies the Lato and Oswald fonts imported in `assets/css/style.css`.
-- [Font Awesome](https://fontawesome.com/) supplies the navigation, social and decorative icons through the kit loaded in `index.html`, `gallery.html` and `signup.html`.
-- [OpenStreetMap](https://www.openstreetmap.org/) supplies the embedded map shown in the footer of all three HTML pages.
-- [Code Institute FormDump](https://formdump.codeinstitute.net/) is the demonstration form endpoint used by the sign-up form in `signup.html`. It does not provide permanent membership storage.
+- [Font Awesome](https://fontawesome.com/) supplies the navigation, social and decorative icons through the kit loaded in `index.html`, `gallery.html`, `signup.html` and `thank-you.html`.
+- [OpenStreetMap](https://www.openstreetmap.org/) supplies the embedded map shown in the footer of all four HTML pages.
+- The sign-up form uses the local `thank-you.html` confirmation page. Because this is a static front-end project, it does not permanently store membership submissions; a backend or form service can be connected later.
 
 ### External images and links
 
-- Swimming images with `unsplash` in their filenames were sourced from [Unsplash](https://unsplash.com/) and are used in the home page and gallery.
+- Swimming images with `unsplash` in their filenames were sourced from [Unsplash](https://unsplash.com/) and are used in the home page and gallery. The filenames retain the photographer and source identifier where supplied.
 - Image files with `istockphoto` in their filenames were sourced from [iStock](https://www.istockphoto.com/). Their filenames are retained in `assets/css/images/` for attribution reference.
-- The Facebook, Twitter, YouTube and Instagram URLs are placeholder external links in the footers. They should be replaced with official club profile URLs when available.
+- `hero-swim.jpg` and `benefits-swim.jpg` are local project image assets used by the sign-up, confirmation and schedule backgrounds. Their original source URLs are not recorded in the repository.
+- The favicon files in `assets/css/images/` are local project branding assets; no separate external source URL is recorded.
+- The Facebook, X, YouTube and Instagram URLs are platform search links used as placeholders until official club profile URLs are available.
 
 ### Development and validation resources
 
 - [W3C Markup Validation Service](https://validator.w3.org/) is recommended for HTML validation.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is recommended for CSS validation.
+- The validation result pages were captured as `docs/validation/html-validation.png` and `docs/validation/css-validation.png` and embedded in the validation sections above.
 
 All external resources and reused code were included for educational and project purposes. Where an original source URL is not recorded in the local project files, the asset filename or project reference identifies the source as accurately as possible.
 
@@ -341,6 +397,7 @@ the-swimming-club/
 ├── index.html
 ├── gallery.html
 ├── signup.html
+├── thank-you.html
 ├── README.md
 ├── LICENSE.md
 ├── assets/

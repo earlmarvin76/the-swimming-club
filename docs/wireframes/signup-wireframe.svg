@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sign-up page wireframe</title>
+  <desc id="desc">Low fidelity wireframe showing the Swimming Club sign-up form structure.</desc>
+  <style>
+    text { font-family: Arial, sans-serif; fill: #263238; }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 16px; }
+    .line { stroke: #263238; stroke-width: 3; fill: none; }
+    .block { stroke: #263238; stroke-width: 3; fill: #eef2f3; }
+    .input { stroke: #263238; stroke-width: 3; fill: #ffffff; }
+    .accent { stroke: #263238; stroke-width: 3; fill: #f5b3a7; }
+  </style>
+  <rect width="1200" height="900" fill="#ffffff"/>
+  <text x="40" y="48" class="label">SIGN-UP PAGE WIREFRAME</text>
+  <rect x="40" y="75" width="1120" height="70" class="block"/>
+  <text x="65" y="118" class="label">LOGO</text><text x="830" y="118" class="small">HOME</text><text x="930" y="118" class="small">GALLERY</text><text x="1050" y="118" class="small">SIGN UP</text>
+  <rect x="285" y="185" width="630" height="500" class="block"/>
+  <text x="440" y="235" class="label">LET'S GET YOU SIGNED UP!</text>
+  <text x="365" y="285" class="small">FIRST NAME</text><rect x="365" y="300" width="470" height="45" class="input"/>
+  <text x="365" y="380" class="small">LAST NAME</text><rect x="365" y="395" width="470" height="45" class="input"/>
+  <text x="365" y="475" class="small">EMAIL ADDRESS</text><rect x="365" y="490" width="470" height="45" class="input"/>
+  <text x="365" y="575" class="small">SWIMMING PREFERENCE</text><circle cx="400" cy="610" r="10" class="line"/><text x="420" y="616" class="small">POOL</text><circle cx="535" cy="610" r="10" class="line"/><text x="555" y="616" class="small">OPEN WATER</text><circle cx="735" cy="610" r="10" class="line"/><text x="755" y="616" class="small">BOTH</text>
+  <rect x="500" y="640" width="200" height="35" class="accent"/><text x="555" y="664" class="small">LET'S SWIM!</text>
+  <rect x="40" y="755" width="1120" height="75" class="block"/><text x="500" y="800" class="small">FOOTER / LINKS / MAP / SOCIALS</text>
+</svg>

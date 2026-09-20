@@ -233,6 +233,59 @@ main {
     }
 }
 
+/* Project-specific confirmation-page styles; the background reuses the local hero image. */
+#confirmation {
+    flex: 1;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 10%;
+    background-image: linear-gradient(rgba(15, 22, 29, 0.5), rgba(15, 22, 29, 0.5)), url("images/hero-swim.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.confirmation-card {
+    max-width: 560px;
+    padding: 45px 35px;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(17, 22, 28, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.confirmation-card h2 {
+    color: #ffffff;
+    margin: 15px 0;
+}
+
+.confirmation-card p {
+    margin-bottom: 25px;
+}
+
+.confirmation-icon {
+    color: #f16c6b;
+    font-size: 3rem;
+}
+
+.confirmation-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+    #confirmation {
+        min-height: 540px;
+        padding: 30px 10%;
+    }
+
+    .confirmation-card {
+        padding: 35px 22px;
+    }
+}
+
 /* Hero section */
 #hero {
     height: 600px;
@@ -322,12 +375,17 @@ main {
     padding-top: 10px;
 }
 
-/* Hide meetup times on the home page */
+/* Keep the swimming schedule visible so visitors can plan a session. */
 #meetups {
-    display: none;
+    display: block;
 }
 
-/* Meetup Times section */
+/* Project-specific schedule heading added for the visible home-page schedule. */
+#meetups > h2 {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
 #times {
     background: url('images/benefits-swim.jpg') no-repeat center/cover;
     /* Handles responsivity without the need for a media query */
@@ -380,11 +438,6 @@ main {
     padding-bottom: 0;
     border-bottom: 1px solid #3a3a3a;
     box-shadow: 0 1px 2px #3a3a3a;
-}
-
-.hidden-heading {
-    position: absolute;
-    left: -9999px;
 }
 
 /* Footer */
