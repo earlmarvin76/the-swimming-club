@@ -262,19 +262,34 @@ To deploy this project as a static site:
 Alternatively, the project can be deployed on Netlify by uploading the project folder or connecting the repository.
 
 ## Credits and attribution
-- I copied this README file directly from my travel-agency project page, with slight change to fit this project
+- This README was adapted from the README for my travel-agency project, with the content changed for The Swimming Club.
 
-This project uses the following resources and inspiration:
+### Reused project code and development assistance
 
-- Unsplash images used throughout the project for hero and gallery content
-- Google Fonts used for typography
-- Font Awesome icons used for social icons and decorative UI elements
-- OpenStreetMap embedded map used in the footer
-- Basic static website structure and styling approach based on front-end web development learning principles
-- Some of the code was copied and pasted from resources like bootstrap, github copilot suggestions, which I used most of the time because it makes completing the project less time consuming.
-- I also copied some of the code from our last project called Love Running, like the bootstrap css in the head and the bootstrap js script at the bottom of body.
+- The header, navigation, footer and responsive layout patterns were adapted from my previous Love Running project. The related comments are in `index.html`.
+- The footer and map layout were adapted from my previous Travel Agency project. The related comment is in `index.html`.
+- GitHub Copilot was used for development suggestions, code completion and help with documentation. The final code was reviewed and adapted for this project.
+- No Bootstrap stylesheet or Bootstrap JavaScript is loaded by this project. The site uses its own CSS in `assets/css/style.css` and JavaScript in `assets/js/script.js`.
 
-All external resources were used for educational and project purposes. Where possible, project-specific branding should be updated later with the official club name, content and media assets.
+### External runtime resources
+
+- [Google Fonts](https://fonts.google.com/) supplies the Lato and Oswald fonts imported in `assets/css/style.css`.
+- [Font Awesome](https://fontawesome.com/) supplies the navigation, social and decorative icons through the kit loaded in `index.html`, `gallery.html` and `signup.html`.
+- [OpenStreetMap](https://www.openstreetmap.org/) supplies the embedded map shown in the footer of all three HTML pages.
+- [Code Institute FormDump](https://formdump.codeinstitute.net/) is the demonstration form endpoint used by the sign-up form in `signup.html`. It does not provide permanent membership storage.
+
+### External images and links
+
+- Swimming images with `unsplash` in their filenames were sourced from [Unsplash](https://unsplash.com/) and are used in the home page and gallery.
+- Image files with `istockphoto` in their filenames were sourced from [iStock](https://www.istockphoto.com/). Their filenames are retained in `assets/css/images/` for attribution reference.
+- The Facebook, Twitter, YouTube and Instagram URLs are placeholder external links in the footers. They should be replaced with official club profile URLs when available.
+
+### Development and validation resources
+
+- [W3C Markup Validation Service](https://validator.w3.org/) is recommended for HTML validation.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is recommended for CSS validation.
+
+All external resources and reused code were included for educational and project purposes. Where an original source URL is not recorded in the local project files, the asset filename or project reference identifies the source as accurately as possible.
 
 ## Reflection and evaluation
 
