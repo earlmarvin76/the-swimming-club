@@ -182,27 +182,32 @@ The website was reviewed across a range of screen sizes to make sure the layout 
 
 ## HTML validation
 
-Official W3C HTML validation was not executed in this environment. The recommended validation step is to submit each page to the W3C validator:
+The deployed home page was checked with the [W3C Nu HTML Checker](https://validator.w3.org/nu/):
 
-- https://validator.w3.org/
+- Tested URL: https://earlmarvin76.github.io/the-swimming-club/index.html
+- Result: no errors or warnings were reported.
+- Evidence: [HTML validation screenshot](docs/validation/html-validation.png)
 
 Evidence status:
 
-- HTML validation has not been formally recorded in this local environment
-- The site was manually checked for structure, semantic tags and page load correctness
-- Final validation should be run before public deployment to confirm zero HTML errors
+![HTML validation result](docs/validation/html-validation.png)
+
+The screenshot records the result for the deployed home page. The gallery and sign-up pages should also be submitted individually if a complete multi-page validation record is required.
 
 ## CSS validation
 
-Official W3C Jigsaw CSS validation was not executed in this environment. The recommended validation step is:
+The deployed stylesheet was checked with the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/):
 
-- https://jigsaw.w3.org/css-validator/
+- Tested URL: https://earlmarvin76.github.io/the-swimming-club/assets/css/style.css
+- Profile: CSS Level 3 + SVG
+- Result: no CSS errors were found; the validator reported three compatibility warnings for `break-inside` in screen media.
+- Evidence: [CSS validation screenshot](docs/validation/css-validation.png)
 
 Evidence status:
 
-- CSS was reviewed for consistency and browser compatibility
-- No browser console errors were noted during local preview testing
-- Formal W3C validation should be run before final production release
+![CSS validation result](docs/validation/css-validation.png)
+
+The screenshot records the result for the deployed stylesheet.
 
 ## Accessibility testing
 
